@@ -6,26 +6,82 @@ import java.awt.Label;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
 
+/**
+ * <h1>Clase VistaInformeTicket </h1>
+ * <p>Clase que hereda de {@link JFrame}, creando la parte gráfica donde se especifica las fechas delimitantes para buscar los tickets y crear el informe.</p>
+ * <p><b>Variables:</b></p>
+ * <ul>
+ *  <li>Tipo Componente: 
+ * 		<ul>
+ * 			<li>{@link #contentPane}</li>
+ * 			<li>{@link #bttnGenerarInforme}</li>
+ *  		<li>{@link #txtFechaInicio}</li>
+ *   		<li>{@link #txtFechaFin}</li>
+ *    		<li>{@link #bttnLimpiar}</li>
+ *     		<li>{@link #bttnCancelar}</li>
+ * 		</ul>
+ * 	</li>
+ * </ul>
+ * <p><b>Metodos:</b></p>
+ * <ul>
+ * 	<li>{@link #VistaInformeTicket()}</li>
+ * </ul>
+ * @author Laura M. P.
+ * @since 28/02/2020
+ * @version 1.0
+ */
 public class VistaInformeTicket extends JFrame {
 
-	/**
-	 * 
+	/** 
+	 * <h1>Número de serie</h1>
+	 * <p>Número de serie automático perteneciente a la clase {@link VistaInformeTicket}</p>  
 	 */
 	private static final long serialVersionUID = 1L;
+	
+	/** 
+	 * <h1>Componente contentPane</h1>
+	 * <p>Componente de tipo {@link JPanel}</p>
+	 */
 	private JPanel contentPane;
+	
+	/** 
+	 * <h1>Componente bttnGenerarInforme</h1>
+	 * <p>Componente de tipo {@link JButton}. Llama al método que genera el informe de los tickets.</p>
+	 * */
 	public JButton bttnGenerarInforme;
+	
+	/** 
+	 * <h1>Componente txtFechaInicio</h1>
+	 * <p>Componente de tipo {@link JTextField}. La fecha de inicio para la busqueda de tickets.</p>
+	 * */
 	public JTextField txtFechaInicio;
+	
+	/** 
+	 * <h1>Componente txtFechaFin</h1>
+	 * <p>Componente de tipo {@link JTextField}. La fecha final para la busqueda de tickets.</p>
+	 * */
 	public JTextField txtFechaFin;
+	
+	/** 
+	 * <h1>Componente bttnLimpiar</h1>
+	 * <p>Componente de tipo {@link JButton}. Llama al método que reinicia los campos.</p>
+	 * */
 	public JButton bttnLimpiar;
+	
+	/** 
+	 * <h1>Componente bttnCancelar</h1>
+	 * <p>Componente de tipo {@link JButton}. Llama al método que cierra la ventana.</p>
+	 * */
 	public JButton bttnCancelar;
 
 	
 
 	/**
-	 * Create the frame.
+	 * <h1>Constructor por defecto</h1>
+	 * <p>Constructor por defecto de la clase {@link VistaInformeTicket}.<br> Crea una ventana con diferentes campos y botones que permitirán generar un informe de tickets según dos fechas facilitadas.</p>
 	 */
 	public VistaInformeTicket() {
 		setTitle("Informe Tickets");

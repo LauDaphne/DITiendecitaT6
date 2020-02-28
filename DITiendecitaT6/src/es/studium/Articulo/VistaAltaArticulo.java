@@ -16,21 +16,92 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 import javax.swing.border.MatteBorder;
 
+/**
+ * <h1>Clase VistaAltaArticulo </h1>
+ * <p>Clase que hereda de {@link JFrame}, creando la parte gráfica del alta de artículos. </p>
+ * <p><b>Variables:</b></p>
+ * <ul>
+ *  <li>Tipo Componente: 
+ * 		<ul>
+ * 			<li>{@link #contentPane}</li>
+ * 			<li>{@link #txtNombreAlta}</li>
+ *  		<li>{@link #txtPrecioArticulo}</li>
+ *   		<li>{@link #txtStockArticulo}</li>
+ *    		<li>{@link #btnAltaArticulo}</li>
+ *     		<li>{@link #btnBorrarAltaArticulo}</li>
+ *      	<li>{@link #btnCancelarAltaArticulo}</li>
+ *      	<li>{@link #txtAreaDescripcionArticulo}</li>
+ * 		</ul>
+ * 	</li>
+ * </ul>
+ * <p><b>Metodos:</b></p>
+ * <ul>
+ * 	<li>{@link #VistaAltaArticulo()}</li>
+ * </ul>
+ * @author Laura M. P.
+ * @since 28/02/2020
+ * @version 1.0
+ */
 public class VistaAltaArticulo extends JFrame {
 
 
+	/** 
+	 * <h1>Número de serie</h1>
+	 * <p>Número de serie automático perteneciente a la clase {@link VistaAltaArticulo}</p>  
+	 */
 	private static final long serialVersionUID = 1L;
+	
+	/** 
+	 * <h1>Componente contentPane</h1>
+	 * <p>Componente de tipo {@link JPanel}</p>
+	 */
 	private JPanel contentPane;
+	
+	/** 
+	 * <h1>Componente txtNombreAlta</h1>
+	 * <p>Componente de tipo {@link JTextField}. Nombre del artículo.</p>
+	 * */
 	public JTextField txtNombreAlta;
+	
+	/** 
+	 * <h1>Componente txtPrecioArticulo</h1>
+	 * <p>Componente de tipo {@link JTextField}. Precio del artículo.</p>
+	 * */
 	public JTextField txtPrecioArticulo;
+	
+	/** 
+	 * <h1>Componente txtStockArticulo</h1>
+	 * <p>Componente de tipo {@link JTextField}. Stock del artículo.</p>
+	 * */
 	public JTextField txtStockArticulo;
+	
+	/** 
+	 * <h1>Componente btnAltaArticulo</h1>
+	 * <p>Componente de tipo {@link JButton}. Llama al método que hace el alta del artículo.</p>
+	 * */
 	public JButton btnAltaArticulo;
+	
+	/** 
+	 * <h1>Componente btnBorrarAltaArticulo</h1>
+	 * <p>Componente de tipo {@link JButton}. Llama al método que reinicia los campos.</p>
+	 * */
 	public JButton btnBorrarAltaArticulo;
+	
+	/** 
+	 * <h1>Componente btnCancelarAltaArticulo</h1>
+	 * <p>Componente de tipo {@link JButton}. Llama al método que cierra la ventana.</p>
+	 * */
 	public JButton btnCancelarAltaArticulo;
+	
+	/** 
+	 * <h1>Componente txtAreaDescripcionArticulo</h1>
+	 * <p>Componente de tipo {@link JTextArea}. Descripción del artículo.</p>
+	 * */
 	public JTextArea txtAreaDescripcionArticulo;
 
 	/**
-	 * Create the frame.
+	 * <h1>Constructor por defecto</h1>
+	 * <p>Constructor por defecto de la clase {@link VistaAltaArticulo}.<br> Crea una ventana con diferentes campos y botones que permitirán dar de alta un artículo.</p>
 	 */
 	public VistaAltaArticulo() {
 		setTitle("Alta Art\u00EDculo");

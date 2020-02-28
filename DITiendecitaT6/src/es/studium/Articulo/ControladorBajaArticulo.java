@@ -9,13 +9,73 @@ import javax.swing.JOptionPane;
 
 import es.studium.DITiendecitaT6.Modelo;
 
+/**
+ * <h1>Clase ControladorBajaArticulo</h1>
+ * <p>Clase que controla {@link VistaBajaArticulo} y le da funcionalidad.</p>
+ * <p><b>Variables:</b></p>
+ * <ul>
+ *  <li>Tipo Objeto: 
+ * 		<ul>
+ * 			<li>{@link #objVista}</li>
+ * 			<li>{@link #objModelo}</li>
+ * 		</ul>
+ * 	</li>
+ *  <li>Tipo String: 
+ * 		<ul>
+ * 			<li>{@link #sentenciaRellenarArticulos}</li>
+ * 		</ul>
+ * 	</li>
+ * </ul>
+ * <p><b>Metodos:</b></p>
+ * <ul>
+ * 	<li>{@link #ControladorBajaArticulo()}</li>
+ * 	<li>{@link #actionPerformed(ActionEvent)}</li>
+ *  <li>{@link #mouseClicked(MouseEvent)}</li>
+ *  <li>{@link #mousePressed(MouseEvent)}</li>
+ *  <li>{@link #mouseReleased(MouseEvent)}</li>
+ *  <li>{@link #mouseEntered(MouseEvent)}</li>
+ *  <li>{@link #mouseExited(MouseEvent)}</li>
+ * </ul>
+ * @author Laura M. P.
+ * @since 28/02/2020
+ * @version 1.0
+ */
 public class ControladorBajaArticulo implements ActionListener, MouseListener {
 
+	/** 
+	 * <h1>Objeto objVista </h1>
+	 * <p>Objeto de la clase {@link VistaBajaArticulo}</p>
+	 * */
 	VistaBajaArticulo objVista = new VistaBajaArticulo();
+	
+	/** 
+	 * <h1>Objeto objModelo </h1>
+	 * <p>Objeto de la clase {@link Modelo}</p>
+	 * */
 	Modelo objModelo = new Modelo();
+	
+	/** 
+	 * <h1>Variable sentenciaRellenarArticulos</h1>
+	 * <p>Variable de tipo {@link String} que contine una sentencia SQL.</p>
+	 */
 	// RELLENAR LISTA ARTÍCULOS
 	String sentenciaRellenarArticulos = "SELECT idArticulo, nombreArticulo, precioArticulo, stockArticulo FROM articulos ORDER BY 2;";
 
+	/**
+	 * <h1>Constructor por defecto</h1>
+	 * <p>Constructor por defecto de la clase {@link ControladorBajaArticulo}.</p>
+	 * <p>Rellena la lista la clase {@link VistaBajaArticulo}. <br> Añade {@link ActionListener} a los siguientes componentes de la clase {@link VistaBajaArticulo}:</p>
+	 * <ul>
+	 * 	<li>{@link VistaBajaArticulo#btnBuscar btnBuscar}</li>
+	 * 	<li>{@link VistaBajaArticulo#btnDarDeBaja btnDarDeBaja}</li>
+	 * 	<li>{@link VistaBajaArticulo#btnBorrarBajaArticulo btnBorrarBajaArticulo}</li>
+	 * 	<li>{@link VistaBajaArticulo#btnCancelarBajaArticulo btnCancelarBajaArticulo}</li>
+	 * </ul>
+	 * <p>Añade {@link MouseListener} a los siguientes componentes de la clase {@link VistaBajaArticulo}:</p>
+	 * <ul>
+	 * 	<li>{@link VistaBajaArticulo#listBajaArticulo listBajaArticulo}</li>
+	 * </ul>
+	 */
 	public ControladorBajaArticulo() {
 		// Añadimos Articulos a la lista
 		try {
@@ -37,6 +97,17 @@ public class ControladorBajaArticulo implements ActionListener, MouseListener {
 	}
 
 
+	/**
+	 * <h1>Action performed</h1>
+	 * <p>Método de la interfaz {@link ActionListener}. Según el componente de la clase {@link VistaBajaArticulo} pulsado:</p>
+	 * <ul>
+	 * 	<li>- Buscará un artículo en la lista.</li>
+	 *  <li>- Hará la <u>baja</u> de un artículo en la base de datos.</li>
+	 *  <li>- Reiniciará los campos de la ventana</li>
+	 *  <li>- Cerrará la ventana</li>
+	 * </ul>
+	 * @param e - Parámetro de tipo {@link ActionEvent}
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
@@ -113,6 +184,11 @@ public class ControladorBajaArticulo implements ActionListener, MouseListener {
 
 	}
 
+	/**
+	 * <h1>Mouse clicked</h1>
+	 * <p>Método de la interfaz {@link MouseListener}. Capta cuando se pulsa sobre la lista de la clase {@link VistaBajaArticulo}</p>
+	 * @param e - Parámetro de tipo {@link MouseEvent}
+	 */
 	@Override
 	public void mouseClicked(MouseEvent e) {
 
@@ -122,24 +198,44 @@ public class ControladorBajaArticulo implements ActionListener, MouseListener {
 
 	}
 
+	/**
+	 * <h1>Mouse pressed</h1>
+	 * <p>Método vacío de la interfaz {@link MouseListener}.</p>
+	 * @param e - Parámetro de tipo {@link MouseEvent}
+	 */
 	@Override
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
 
 	}
 
+	/**
+	 * <h1>Mouse released</h1>
+	 * <p>Método vacío de la interfaz {@link MouseListener}.</p>
+	 * @param e - Parámetro de tipo {@link MouseEvent}
+	 */
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
 
 	}
 
+	/**
+	 * <h1>Mouse entered</h1>
+	 * <p>Método vacío de la interfaz {@link MouseListener}.</p>
+	 * @param e - Parámetro de tipo {@link MouseEvent}
+	 */
 	@Override
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
 
 	}
 
+	/**
+	 * <h1>Mouse exited</h1>
+	 * <p>Método vacío de la interfaz {@link MouseListener}.</p>
+	 * @param e - Parámetro de tipo {@link MouseEvent}
+	 */
 	@Override
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub

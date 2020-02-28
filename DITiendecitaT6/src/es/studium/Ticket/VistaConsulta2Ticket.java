@@ -11,23 +11,88 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
 import javax.swing.border.MatteBorder;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.border.LineBorder;
 
+/**
+ * <h1>Clase VistaConsulta2Ticket </h1>
+ * <p>Clase que hereda de {@link JFrame}, creando la segunda parte gráfica de la consulta de tickets. En la que vemos los detalles de un ticket especifico. </p>
+ * <p><b>Variables:</b></p>
+ * <ul>
+ *  <li>Tipo Componente: 
+ * 		<ul>
+ * 			<li>{@link #contentPane}</li>
+ * 			<li>{@link #modeloTablaArtTicket}</li>
+ *  		<li>{@link #tblConsultaArtTicket}</li>
+ *   		<li>{@link #lblTitulo}</li>
+ *    		<li>{@link #lblFechaTicket}</li>
+ *     		<li>{@link #lblTotalTicket}</li>
+ *      	<li>{@link #btnCancelar}</li>
+ * 		</ul>
+ * 	</li>
+ * </ul>
+ * <p><b>Metodos:</b></p>
+ * <ul>
+ * 	<li>{@link #VistaConsulta2Ticket()}</li>
+ * </ul>
+ * @author Laura M. P.
+ * @since 28/02/2020
+ * @version 1.0
+ */
 public class VistaConsulta2Ticket extends JFrame {
 
+	/** 
+	 * <h1>Número de serie</h1>
+	 * <p>Número de serie automático perteneciente a la clase {@link VistaConsulta2Ticket}</p>  
+	 */
 	private static final long serialVersionUID = 1L;
+	
+	/** 
+	 * <h1>Componente contentPane</h1>
+	 * <p>Componente de tipo {@link JPanel}</p>
+	 */
 	private JPanel contentPane;
+	
+	/** 
+	 * <h1>Componente modeloTablaArtTicket</h1>
+	 * <p>Componente de tipo {@link DefaultTableModel}.</p>
+	 * */
 	public DefaultTableModel modeloTablaArtTicket= new DefaultTableModel();
+	
+	/** 
+	 * <h1>Componente tblConsultaArtTicket</h1>
+	 * <p>Componente de tipo {@link JTable}. Contiene una tabla de artículos.</p>
+	 * */
 	public JTable tblConsultaArtTicket= new JTable(modeloTablaArtTicket);
+	
+	/** 
+	 * <h1>Componente lblTitulo</h1>
+	 * <p>Componente de tipo {@link JLabel}. Título de la ventana.</p>
+	 * */
 	public JLabel lblTitulo;
+	
+	/** 
+	 * <h1>Componente lblFechaTicket</h1>
+	 * <p>Componente de tipo {@link JLabel}. Fecha de creación del ticket.</p>
+	 * */
 	public JLabel lblFechaTicket;
+	
+	/** 
+	 * <h1>Componente lblTotalTicket</h1>
+	 * <p>Componente de tipo {@link JLabel}. Precio total del ticket.</p>
+	 * */
 	public JLabel lblTotalTicket;
+	
+	/** 
+	 * <h1>Componente btnCancelar</h1>
+	 * <p>Componente de tipo {@link JButton}. Llama al método que cierra la ventana.</p>
+	 * */
 	public JButton btnCancelar;
 
 	/**
-	 * Create the frame.
+	 * <h1>Constructor por defecto</h1>
+	 * <p>Constructor por defecto de la clase {@link VistaConsulta2Ticket}.<br> Crea una ventana con diferentes campos y botones que permitirán consultar los artículo que tiene un ticket.</p>
 	 */
 	public VistaConsulta2Ticket() {
 		setResizable(false);

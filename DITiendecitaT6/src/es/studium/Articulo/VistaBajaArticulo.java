@@ -17,25 +17,108 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 import javax.swing.border.MatteBorder;
 
+/**
+ * <h1>Clase VistaBajaArticulo </h1>
+ * <p>Clase que hereda de {@link JFrame}, creando la parte gráfica de la baja de artículos. </p>
+ * <p><b>Variables:</b></p>
+ * <ul>
+ *  <li>Tipo Componente: 
+ * 		<ul>
+ * 			<li>{@link #contentPane}</li>
+ * 			<li>{@link #txtBuscarBajaArticulo}</li>
+ *  		<li>{@link #txtBajaArticuloElegido}</li>
+ *   		<li>{@link #btnBuscar}</li>
+ *    		<li>{@link #btnDarDeBaja}</li>
+ *     		<li>{@link #btnBorrarBajaArticulo}</li>
+ *      	<li>{@link #btnCancelarBajaArticulo}</li>
+ *      	<li>{@link #modeloListaArticulos}</li>
+ *      	<li>{@link #listBajaArticulo}</li>
+ *     		<li>{@link #scrollBaja}</li>
+ * 		</ul>
+ * 	</li>
+ * </ul>
+ * <p><b>Metodos:</b></p>
+ * <ul>
+ * 	<li>{@link #VistaBajaArticulo()}</li>
+ * </ul>
+ * @author Laura M. P.
+ * @since 28/02/2020
+ * @version 1.0
+ */
 public class VistaBajaArticulo extends JFrame {
 
 
+	/** 
+	 * <h1>Número de serie</h1>
+	 * <p>Número de serie automático perteneciente a la clase {@link VistaBajaArticulo}</p>  
+	 */
 	private static final long serialVersionUID = 1L;
+	
+	/** 
+	 * <h1>Componente contentPane</h1>
+	 * <p>Componente de tipo {@link JPanel}</p>
+	 */
 	private JPanel contentPane;
+	
+	/** 
+	 * <h1>Componente txtBuscarBajaArticulo</h1>
+	 * <p>Componente de tipo {@link JTextField}. Nombre del artículo para buscar.</p>
+	 * */
 	public JTextField txtBuscarBajaArticulo;
+	
+	/** 
+	 * <h1>Componente txtBajaArticuloElegido</h1>
+	 * <p>Componente de tipo {@link JTextField}. Nombre del artículo para eliminar.</p>
+	 * */
 	public JTextField txtBajaArticuloElegido;
+	
+	/** 
+	 * <h1>Componente btnBuscar</h1>
+	 * <p>Componente de tipo {@link JButton}. Llama al método que busca un artículo.</p>
+	 * */
 	public JButton btnBuscar;
+	
+	/** 
+	 * <h1>Componente btnDarDeBaja</h1>
+	 * <p>Componente de tipo {@link JButton}. Llama al método que da de baja un artículo.</p>
+	 * */
 	public JButton btnDarDeBaja;
+	
+	/** 
+	 * <h1>Componente btnBorrarBajaArticulo</h1>
+	 * <p>Componente de tipo {@link JButton}. Llama al método que reinicia los campos.</p>
+	 * */
 	public JButton btnBorrarBajaArticulo;
+	
+	/** 
+	 * <h1>Componente btnCancelarBajaArticulo</h1>
+	 * <p>Componente de tipo {@link JButton}. Llama al método que cierra la ventana.</p>
+	 * */
 	public JButton btnCancelarBajaArticulo;
+	
+	/** 
+	 * <h1>Componente modeloListaArticulos</h1>
+	 * <p>Componente de tipo {@link DefaultListModel}.</p>
+	 * */
 	public DefaultListModel<String> modeloListaArticulos = new DefaultListModel<String>();
+	
+	/** 
+	 * <h1>Componente listBajaArticulo</h1>
+	 * <p>Componente de tipo {@link JList}. Contiene una lista de artículos.</p>
+	 * */
 	public JList<String> listBajaArticulo = new JList<String>(modeloListaArticulos);
+	
+	/** 
+	 * <h1>Componente scrollBaja</h1>
+	 * <p>Componente de tipo {@link JScrollPane}. Añadido a una lista de artículos.</p>
+	 * */
 	public JScrollPane scrollBaja = new JScrollPane(listBajaArticulo);
 
 
 
 	/**
-	 * Create the frame.
+	 * <h1>Constructor por defecto</h1>
+	 * <p>Constructor por defecto de la clase {@link VistaBajaArticulo}.<br> Crea una ventana con diferentes campos y botones que permitirán dar de baja un artículo.</p>
 	 */
 	public VistaBajaArticulo() {
 		setResizable(false);

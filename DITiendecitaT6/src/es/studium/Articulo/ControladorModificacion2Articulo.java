@@ -3,19 +3,79 @@ package es.studium.Articulo;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.ResultSet;
-
 import javax.swing.JOptionPane;
 
 import es.studium.DITiendecitaT6.Modelo;
 
+/**
+ * <h1>Clase ControladorModificacion2Articulo</h1>
+ * <p>Clase que controla {@link VistaModificacion2Articulo} y le da funcionalidad.</p>
+ * <p><b>Variables:</b></p>
+ * <ul>
+ *  <li>Tipo Objeto: 
+ * 		<ul>
+ * 			<li>{@link #objVista}</li>
+ * 			<li>{@link #objModelo}</li>
+ * 		</ul>
+ * 	</li>
+ *  <li>Tipo String: 
+ * 		<ul>
+ * 			<li>{@link #idArticulo}</li>
+ * 		</ul>
+ * 	</li>
+ * <li>Otros: 
+ * 		<ul>
+ * 			<li>{@link #resultado}</li>
+ * 		</ul>
+ * 	</li>
+ * </ul>
+ * <p><b>Metodos:</b></p>
+ * <ul>
+ * 	<li>{@link #ControladorModificacion2Articulo()}</li>
+ * 	<li>{@link #actionPerformed(ActionEvent)}</li>
+ * </ul>
+ * @author Laura M. P.
+ * @since 28/02/2020
+ * @version 1.0
+ */
 public class ControladorModificacion2Articulo implements ActionListener {
 
+	/** 
+	 * <h1>Objeto objVista </h1>
+	 * <p>Objeto de la clase {@link VistaModificacion2Articulo}</p>
+	 * */
 	VistaModificacion2Articulo objVista = new VistaModificacion2Articulo();
+	
+	/** 
+	 * <h1>Objeto objModelo </h1>
+	 * <p>Objeto de la clase {@link Modelo}</p>
+	 * */
 	Modelo objModelo = new Modelo();
+	
+	/** 
+	 * <h1>Variable resultado</h1>
+	 * <p>Variable de tipo {@link ResultSet}, resultado de una consulta en la base de datos.</p>
+	 */
 	ResultSet resultado;
+	
+	/** 
+	 * <h1>Variable idArticulo</h1>
+	 * <p>Variable de tipo {@link String} que contine el ID de un artículo de la base de datos.</p>
+	 */
 	String idArticulo;
 
-	ControladorModificacion2Articulo(String idArticulo) {
+	/**
+	 * <h1>Constructor por defecto</h1>
+	 * <p>Constructor por defecto de la clase {@link ControladorModificacion2Articulo}.</p>
+	 * <p>Rellena los campos la clase {@link VistaModificacion2Articulo} con los datos de la base de datos. <br> Añade {@link ActionListener} a los siguientes componentes de la clase {@link VistaModificacion2Articulo}:</p>
+	 * <ul>
+	 * 	<li>{@link VistaModificacion2Articulo#btnCambiarArticulo btnCambiarArticulo}</li>
+	 * 	<li>{@link VistaModificacion2Articulo#btnBorrarCambio btnBorrarCambio}</li>
+	 * 	<li>{@link VistaModificacion2Articulo#btnCancelarCambio btnCancelarCambio}</li>
+	 * </ul>
+	 * @param idArticulo ({@link String}) - ID de un artículo de la base de datos
+	 */
+	public ControladorModificacion2Articulo(String idArticulo) {
 		this.idArticulo=idArticulo;
 		// Rellenar campos
 		try {
@@ -41,6 +101,16 @@ public class ControladorModificacion2Articulo implements ActionListener {
 		objVista.btnCancelarCambio.addActionListener(this);
 	}
 
+	/**
+	 * <h1>Action performed</h1>
+	 * <p>Método de la interfaz {@link ActionListener}. Según el componente de la clase {@link VistaModificacion2Articulo} pulsado:</p>
+	 * <ul>
+	 * 	<li>- Hará la <u>modificación</u> de un artículo en la base de datos.</li>
+	 *  <li>- Reiniciará los campos de la ventana con los datos de la base de datos.</li>
+	 *  <li>- Cerrará la ventana</li>
+	 * </ul>
+	 * @param e - Parámetro de tipo {@link ActionEvent}
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 

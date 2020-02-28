@@ -20,22 +20,114 @@ import javax.swing.border.LineBorder;
 import javax.swing.border.MatteBorder;
 import javax.swing.table.DefaultTableModel;
 
+/**
+ * <h1>Clase VistaAltaTicket </h1>
+ * <p>Clase que hereda de {@link JFrame}, creando la parte gráfica del alta de tickets. </p>
+ * <p><b>Variables:</b></p>
+ * <ul>
+ *  <li>Tipo Componente: 
+ * 		<ul>
+ * 			<li>{@link #contentPane}</li>
+ * 			<li>{@link #txtBuscarTickettxt}</li>
+ *  		<li>{@link #CantidadTicket}</li>
+ *   		<li>{@link #lblFechaTicket}</li>
+ *    		<li>{@link #modeloListaArticulosTicket}</li>
+ *    		<li>{@link #listaArticulosTicket}</li>
+ *  		<li>{@link #scrollArtTicket}</li>
+ *   		<li>{@link #btnBuscarTicket}</li>
+ *    		<li>{@link #lblArticuloSeleccionadoTicket}</li>
+ *    		<li>{@link #btnAgregarArticulo}</li>
+ *  		<li>{@link #modeloTablaCompraTicket}</li>
+ *   		<li>{@link #tablaCompraTicket}</li>
+ *    		<li>{@link #scrollCompTicket}</li>
+ *    		<li>{@link #lblTotalTicket}</li>
+ *  		<li>{@link #btnEliminarArticuloTicket}</li>
+ *   		<li>{@link #btnAltaTicket}</li>
+ *    		<li>{@link #btnBorrarTicket}</li>
+ *    		<li>{@link #btnCancelarTicket}</li>
+ * 		</ul>
+ * 	</li>
+ * </ul>
+ * <p><b>Metodos:</b></p>
+ * <ul>
+ * 	<li>{@link #VistaAltaTicket()}</li>
+ * </ul>
+ * @author Laura M. P.
+ * @since 28/02/2020
+ * @version 1.0
+ */
 public class VistaAltaTicket extends JFrame {
 
-	/**
-	 * 
+	/** 
+	 * <h1>Número de serie</h1>
+	 * <p>Número de serie automático perteneciente a la clase {@link VistaAltaTicket}</p>  
 	 */
 	private static final long serialVersionUID = 1L;
+	
+	/** 
+	 * <h1>Componente contentPane</h1>
+	 * <p>Componente de tipo {@link JPanel}</p>
+	 */
 	private JPanel contentPane;
+	
+	/** 
+	 * <h1>Componente txtBuscarTicket</h1>
+	 * <p>Componente de tipo {@link JTextField}. Nombre del artículo para buscar.</p>
+	 * */
 	public JTextField txtBuscarTicket;
+	
+	/** 
+	 * <h1>Componente txtCantidadTicket</h1>
+	 * <p>Componente de tipo {@link JTextField}. Cantidad del artículo que compra.</p>
+	 * */
 	public JTextField txtCantidadTicket;
+	
+	/** 
+	 * <h1>Componente lblFechaTicket</h1>
+	 * <p>Componente de tipo {@link JLabel}. Fecha de la creación del ticket.</p>
+	 * */
 	public JLabel lblFechaTicket;
+	
+	/** 
+	 * <h1>Componente modeloListaArticulosTicket</h1>
+	 * <p>Componente de tipo {@link DefaultListModel}.</p>
+	 * */
 	public DefaultListModel<String> modeloListaArticulosTicket = new DefaultListModel<String>();
+	
+	/** 
+	 * <h1>Componente listaArticulosTicket</h1>
+	 * <p>Componente de tipo {@link JList}. Contiene una lista de artículos.</p>
+	 * */
 	public JList<String> listaArticulosTicket = new JList<String>(modeloListaArticulosTicket);;
+	
+	/** 
+	 * <h1>Componente scrollArtTicket</h1>
+	 * <p>Componente de tipo {@link JScrollPane}. Añadido a una lista de artículos.</p>
+	 * */
 	public JScrollPane scrollArtTicket = new JScrollPane(listaArticulosTicket);
+	
+	/** 
+	 * <h1>Componente btnBuscarTicket</h1>
+	 * <p>Componente de tipo {@link JButton}. Llama al método que busca un artículo.</p>
+	 * */
 	public JButton btnBuscarTicket;
+	
+	/** 
+	 * <h1>Componente lblArticuloSeleccionadoTicket</h1>
+	 * <p>Componente de tipo {@link JLabel}. Muestra el artículo seleccionado.</p>
+	 * */
 	public JLabel lblArticuloSeleccionadoTicket;
+	
+	/** 
+	 * <h1>Componente btnAgregarArticulo</h1>
+	 * <p>Componente de tipo {@link JButton}. Agrega un artículo al ticket.</p>
+	 * */
 	public JButton btnAgregarArticulo;
+	
+	/** 
+	 * <h1>Componente modeloTablaCompraTicket</h1>
+	 * <p>Componente de tipo {@link DefaultTableModel}. No permite la edición de la tabla pero si la pulsación de una fila.</p>
+	 * */
 	public DefaultTableModel modeloTablaCompraTicket = new DefaultTableModel(){
 		private static final long serialVersionUID = 1L;
 		@Override
@@ -43,17 +135,53 @@ public class VistaAltaTicket extends JFrame {
 			return false;
 		}
 	};
-	public JTable tablaCompraTicket= new JTable(modeloTablaCompraTicket);;
+	
+	/** 
+	 * <h1>Componente tablaCompraTicket</h1>
+	 * <p>Componente de tipo {@link JTable}. Contiene una tabla de artículos.</p>
+	 * */
+	public JTable tablaCompraTicket= new JTable(modeloTablaCompraTicket);
+	
+	/** 
+	 * <h1>Componente scrollCompTicket</h1>
+	 * <p>Componente de tipo {@link JScrollPane}. Añadido a una tabla de artículos.</p>
+	 * */
 	public JScrollPane scrollCompTicket = new JScrollPane(tablaCompraTicket);
+	
+	/** 
+	 * <h1>Componente lblTotalTicket</h1>
+	 * <p>Componente de tipo {@link JLabel}. Muestra el precio total de un ticket.</p>
+	 * */
 	public JLabel lblTotalTicket;
+	
+	/** 
+	 * <h1>Componente btnEliminarArticuloTicket</h1>
+	 * <p>Componente de tipo {@link JButton}. Elimina un artículo de la tabla de compra.</p>
+	 * */
 	public JButton btnEliminarArticuloTicket;
+	
+	/** 
+	 * <h1>Componente btnAltaTicket</h1>
+	 * <p>Componente de tipo {@link JButton}. Llama al método que da de alta un ticket.</p>
+	 * */
 	public JButton btnAltaTicket;
+	
+	/** 
+	 * <h1>Componente btnBorrarTicket</h1>
+	 * <p>Componente de tipo {@link JButton}. Llama al método que reinicia los campos.</p>
+	 * */
 	public JButton btnBorrarTicket;
+	
+	/** 
+	 * <h1>Componente btnCancelarTicket</h1>
+	 * <p>Componente de tipo {@link JButton}. Llama al método que cierra la ventana.</p>
+	 * */
 	public JButton btnCancelarTicket;
 
 
 	/**
-	 * Create the frame.
+	 * <h1>Constructor por defecto</h1>
+	 * <p>Constructor por defecto de la clase {@link VistaAltaTicket}.<br> Crea una ventana con diferentes campos y botones que permitirán dar alta un ticket.</p>
 	 */
 	public VistaAltaTicket() {
 		setResizable(false);

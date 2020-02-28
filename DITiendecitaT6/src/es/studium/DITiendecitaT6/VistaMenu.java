@@ -2,7 +2,6 @@ package es.studium.DITiendecitaT6;
 
 import java.awt.Color;
 import java.awt.Font;
-
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
@@ -13,22 +12,99 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.MatteBorder;
 
+/**
+ * <h1>Clase VistaMenu </h1>
+ * <p>Clase que hereda de {@link JFrame}, creando la parte gráfica del Menú. </p>
+ * <p><b>Variables:</b></p>
+ * <ul>
+ *  <li>Tipo Componente: 
+ * 		<ul>
+ * 			<li>{@link #contentPane}</li>
+ * 			<li>{@link #itemAltaArticulo}</li>
+ *  		<li>{@link #itemBajaArticulo}</li>
+ *   		<li>{@link #itemModificacionArticulo}</li>
+ *    		<li>{@link #itemConsultaArticulo}</li>
+ *     		<li>{@link #itemAltaTicket}</li>
+ *      	<li>{@link #itemConsultaTicket}</li>
+ *      	<li>{@link #itemInformeTickets}</li>
+ *      	<li>{@link #itemInformeArtculos}</li>
+ * 		</ul>
+ * 	</li>
+ * </ul>
+ * <p><b>Metodos:</b></p>
+ * <ul>
+ * 	<li>{@link #VistaMenu()}</li>
+ * </ul>
+ * @author Laura M. P.
+ * @since 28/02/2020
+ * @version 1.0
+ */
 public class VistaMenu extends JFrame {
 
+	/** 
+	 * <h1>Número de serie</h1>
+	 * <p>Número de serie automático perteneciente a la clase {@link VistaMenu}</p>  
+	 */
 	private static final long serialVersionUID = 1L;
+	
+	/** 
+	 * <h1>Componente contentPane</h1>
+	 * <p>Componente de tipo {@link JPanel}</p>
+	 * */
 	private JPanel contentPane;
+	
+	/** 
+	 * <h1>Componente itemAltaArticulo</h1>
+	 * <p>Componente de tipo {@link JMenuItem}. Pertenece al {@link JMenu} de Artículos.</p>
+	 * */
 	public JMenuItem itemAltaArticulo;
+	
+	/** 
+	 * <h1>Componente itemBajaArticulo</h1>
+	 * <p>Componente de tipo {@link JMenuItem}. Pertenece al {@link JMenu} de Artículos.</p>
+	 * */
 	public JMenuItem itemBajaArticulo;
+	
+	/** 
+	 * <h1>Componente itemModificacionArticulo</h1>
+	 * <p>Componente de tipo {@link JMenuItem}. Pertenece al {@link JMenu} de Artículos.</p>
+	 * */
 	public JMenuItem itemModificacionArticulo;
+	
+	/** 
+	 * <h1>Componente itemConsultaArticulo</h1>
+	 * <p>Componente de tipo {@link JMenuItem}. Pertenece al {@link JMenu} de Artículos.</p>
+	 * */
 	public JMenuItem itemConsultaArticulo;
+	
+	/** 
+	 * <h1>Componente itemAltaTicket</h1>
+	 * <p>Componente de tipo {@link JMenuItem}. Pertenece al {@link JMenu} de Tickets.</p>
+	 * */
 	public JMenuItem itemAltaTicket;
+	
+	/** 
+	 * <h1>Componente itemConsultaTicket</h1>
+	 * <p>Componente de tipo {@link JMenuItem}. Pertenece al {@link JMenu} de Tickets.</p>
+	 * */
 	public JMenuItem itemConsultaTicket;
+	
+	/** 
+	 * <h1>Componente itemInformeTickets</h1>
+	 * <p>Componente de tipo {@link JMenuItem}. Pertenece al {@link JMenu} de Tickets.</p>
+	 * */
 	public JMenuItem itemInformeTickets;
+	
+	/** 
+	 * <h1>Componente itemInformeArtculos</h1>
+	 * <p>Componente de tipo {@link JMenuItem}. Pertenece al {@link JMenu} de Artículos.</p>
+	 * */
 	public JMenuItem itemInformeArtculos;
 
 
 	/**
-	 * Create the frame.
+	 * <h1>Constructor por defecto</h1>
+	 * <p>Constructor por defecto de la clase {@link VistaMenu}.<br> Crea una ventana para una tienda, con un menú integrado. El menú contiene dos secciones, la parte de Artículos y la parte de Tickets. Estas, a su vez, contienen algunas o todas las operaciones <b>CRUD</b>.</p>
 	 */
 	public VistaMenu() {
 		setTitle("La Tiendecita");

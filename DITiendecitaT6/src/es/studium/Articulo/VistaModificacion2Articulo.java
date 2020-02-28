@@ -16,21 +16,92 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 import javax.swing.border.MatteBorder;
 
+/**
+ * <h1>Clase VistaModificacion2Articulo </h1>
+ * <p>Clase que hereda de {@link JFrame}, creando la segunda parte gráfica de la modificación de artículos. </p>
+ * <p><b>Variables:</b></p>
+ * <ul>
+ *  <li>Tipo Componente: 
+ * 		<ul>
+ * 			<li>{@link #contentPane}</li>
+ * 			<li>{@link #txtNombreModificacion}</li>
+ *  		<li>{@link #txtPrecioModificacion}</li>
+ *   		<li>{@link #txtStockModificacion}</li>
+ *    		<li>{@link #btnCambiarArticulo}</li>
+ *   		<li>{@link #btnBorrarCambio}</li>
+ *    		<li>{@link #btnCancelarCambio}</li>
+ *    		<li>{@link #txtAreaDescripcionCambio}</li>
+ * 		</ul>
+ * 	</li>
+ * </ul>
+ * <p><b>Metodos:</b></p>
+ * <ul>
+ * 	<li>{@link #VistaModificacion2Articulo()}</li>
+ * </ul>
+ * @author Laura M. P.
+ * @since 28/02/2020
+ * @version 1.0
+ */
 public class VistaModificacion2Articulo extends JFrame {
 
+	/** 
+	 * <h1>Número de serie</h1>
+	 * <p>Número de serie automático perteneciente a la clase {@link VistaModificacion2Articulo}</p>  
+	 */
 	private static final long serialVersionUID = 1L;
+	
+	/** 
+	 * <h1>Componente contentPane</h1>
+	 * <p>Componente de tipo {@link JPanel}</p>
+	 */
 	private JPanel contentPane;
+	
+	/** 
+	 * <h1>Componente txtNombreModificacion</h1>
+	 * <p>Componente de tipo {@link JTextField}. Nombre del artículo.</p>
+	 * */
 	public JTextField txtNombreModificacion;
+	
+	/** 
+	 * <h1>Componente txtPrecioModificacion</h1>
+	 * <p>Componente de tipo {@link JTextField}. Precio del artículo.</p>
+	 * */
 	public JTextField txtPrecioModificacion;
+	
+	/** 
+	 * <h1>Componente txtStockModificacion</h1>
+	 * <p>Componente de tipo {@link JTextField}. Stock del artículo.</p>
+	 * */
 	public JTextField txtStockModificacion;
+	
+	/** 
+	 * <h1>Componente btnCambiarArticulo</h1>
+	 * <p>Componente de tipo {@link JButton}. Llama al método que hace la modificación del artículo.</p>
+	 * */
 	public JButton btnCambiarArticulo;
+	
+	/** 
+	 * <h1>Componente btnBorrarCambio</h1>
+	 * <p>Componente de tipo {@link JButton}. Llama al método que reinicia los campos.</p>
+	 * */
 	public JButton btnBorrarCambio;
+	
+	/** 
+	 * <h1>Componente btnCancelarCambio</h1>
+	 * <p>Componente de tipo {@link JButton}. Llama al método que cierra la ventana.</p>
+	 * */
 	public JButton btnCancelarCambio;
+	
+	/** 
+	 * <h1>Componente txtAreaDescripcionCambio</h1>
+	 * <p>Componente de tipo {@link JTextArea}. Descripción del artículo.</p>
+	 * */
 	public JTextArea txtAreaDescripcionCambio;
 
 
 	/**
-	 * Create the frame.
+	 * <h1>Constructor por defecto</h1>
+	 * <p>Constructor por defecto de la clase {@link VistaModificacion2Articulo}.<br> Crea una ventana con diferentes campos y botones que permitirán modificar un artículo.</p>
 	 */
 	public VistaModificacion2Articulo() {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
